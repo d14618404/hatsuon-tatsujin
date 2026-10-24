@@ -8,6 +8,10 @@ The little girl opened the wooden door and discovered a beautiful garden behind 
 
 My brother found a small black cat under the old wooden bridge.
 
+`stage-03.mp3`：
+
+We waited for the morning train, but it never came to the station.
+
 `src/stages.js` の各 `start: null` を元音声上の発話開始秒へ置換し、音声・時刻・分類を確認したら `verified: true` にします。0秒は元ファイルの先頭です。プリロール分を足さないでください。
 
 仮デモの音はブラウザ内で生成するガイド音です。英文音声、TTS、録音された発話ではありません。本番音声の代替ではありません。

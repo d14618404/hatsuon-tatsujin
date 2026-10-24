@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 STAGES = {
     'stage-01': 'The little girl opened the wooden door and discovered a beautiful garden behind the house'.split(),
     'stage-02': 'My brother found a small black cat under the old wooden bridge'.split(),
+    'stage-03': 'We waited for the morning train, but it never came to the station'.split(),
 }
 VOICE = 'Samantha'
 RATE = 170

@@ -9,5 +9,10 @@ export const syntheticDemos = {
     audio: new URL("../public/audio/stage-02-synthetic.wav", import.meta.url).href,
     verified: false, timingStatus: "estimated-not-aligned",
     starts: [0.0355, 0.3094, 0.573, 0.8836, 1.0977, 1.417, 1.6891, 1.9564, 2.2278, 2.4746, 2.7676, 3.0501]
+  },
+  "stage-03": {
+    audio: new URL("../public/audio/stage-03-synthetic.wav", import.meta.url).href,
+    verified: false, timingStatus: "estimated-not-aligned",
+    starts: [0.0376, 0.2682, 0.5536, 0.81, 1.056, 1.3602, 1.6482, 1.8751, 2.0168, 2.2691, 2.5614, 2.7955, 3.0415]
   }
 };

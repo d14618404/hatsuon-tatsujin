@@ -1,0 +1,65 @@
+{
+  "stageId": "stage-03",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-03-synthetic.wav",
+  "duration": 3.5062585034013605,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "words": [
+    {
+      "text": "We",
+      "start": 0.0376
+    },
+    {
+      "text": "waited",
+      "start": 0.2682
+    },
+    {
+      "text": "for",
+      "start": 0.5536
+    },
+    {
+      "text": "the",
+      "start": 0.81
+    },
+    {
+      "text": "morning",
+      "start": 1.056
+    },
+    {
+      "text": "train,",
+      "start": 1.3602
+    },
+    {
+      "text": "but",
+      "start": 1.6482
+    },
+    {
+      "text": "it",
+      "start": 1.8751
+    },
+    {
+      "text": "never",
+      "start": 2.0168
+    },
+    {
+      "text": "came",
+      "start": 2.2691
+    },
+    {
+      "text": "to",
+      "start": 2.5614
+    },
+    {
+      "text": "the",
+      "start": 2.7955
+    },
+    {
+      "text": "station",
+      "start": 3.0415
+    }
+  ]
+}
