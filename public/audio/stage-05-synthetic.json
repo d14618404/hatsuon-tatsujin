@@ -1,0 +1,113 @@
+{
+  "stageId": "stage-05",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-05-synthetic.wav",
+  "duration": 8.753968253968255,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "words": [
+    {
+      "text": "On",
+      "start": 0.0355
+    },
+    {
+      "text": "Saturday",
+      "start": 0.3111
+    },
+    {
+      "text": "morning,",
+      "start": 0.817
+    },
+    {
+      "text": "our",
+      "start": 1.372
+    },
+    {
+      "text": "science",
+      "start": 1.5753
+    },
+    {
+      "text": "teacher",
+      "start": 2.0141
+    },
+    {
+      "text": "took",
+      "start": 2.333
+    },
+    {
+      "text": "us",
+      "start": 2.5692
+    },
+    {
+      "text": "to",
+      "start": 2.7875
+    },
+    {
+      "text": "the",
+      "start": 3.0178
+    },
+    {
+      "text": "city",
+      "start": 3.2598
+    },
+    {
+      "text": "museum,",
+      "start": 3.5303
+    },
+    {
+      "text": "where",
+      "start": 4.1317
+    },
+    {
+      "text": "we",
+      "start": 4.3848
+    },
+    {
+      "text": "carefully",
+      "start": 4.629
+    },
+    {
+      "text": "studied",
+      "start": 5.0843
+    },
+    {
+      "text": "ancient",
+      "start": 5.4599
+    },
+    {
+      "text": "maps",
+      "start": 5.8382
+    },
+    {
+      "text": "and",
+      "start": 6.2123
+    },
+    {
+      "text": "listened",
+      "start": 6.4689
+    },
+    {
+      "text": "to",
+      "start": 6.8364
+    },
+    {
+      "text": "stories",
+      "start": 7.0843
+    },
+    {
+      "text": "about",
+      "start": 7.5501
+    },
+    {
+      "text": "distant",
+      "start": 7.8728
+    },
+    {
+      "text": "travelers",
+      "start": 8.1965
+    }
+  ]
+}

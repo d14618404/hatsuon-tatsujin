@@ -19,5 +19,10 @@ export const syntheticDemos = {
     audio: new URL("../public/audio/stage-04-synthetic.wav", import.meta.url).href,
     verified: false, timingStatus: "estimated-not-aligned",
     starts: [0.03, 0.4306, 1.0332, 1.2557, 1.5452, 1.7427, 2.1941, 2.4527, 2.6775, 2.878, 3.1415, 3.593, 3.8126, 4.0244, 4.3089, 4.505, 4.7974, 5.0533, 5.3943, 5.6204]
+  },
+  "stage-05": {
+    audio: new URL("../public/audio/stage-05-synthetic.wav", import.meta.url).href,
+    verified: false, timingStatus: "estimated-not-aligned",
+    starts: [0.0355, 0.3111, 0.817, 1.372, 1.5753, 2.0141, 2.333, 2.5692, 2.7875, 3.0178, 3.2598, 3.5303, 4.1317, 4.3848, 4.629, 5.0843, 5.4599, 5.8382, 6.2123, 6.4689, 6.8364, 7.0843, 7.5501, 7.8728, 8.1965]
   }
 };
