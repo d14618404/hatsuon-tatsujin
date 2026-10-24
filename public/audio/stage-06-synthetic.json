@@ -1,0 +1,133 @@
+{
+  "stageId": "stage-06",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-06-synthetic.wav",
+  "duration": 9.264807256235828,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "words": [
+    {
+      "text": "Before",
+      "start": 0.047
+    },
+    {
+      "text": "sunset,",
+      "start": 0.4672
+    },
+    {
+      "text": "our",
+      "start": 1.2342
+    },
+    {
+      "text": "family",
+      "start": 1.4251
+    },
+    {
+      "text": "packed",
+      "start": 1.7992
+    },
+    {
+      "text": "some",
+      "start": 2.0756
+    },
+    {
+      "text": "food",
+      "start": 2.3763
+    },
+    {
+      "text": "and",
+      "start": 2.6333
+    },
+    {
+      "text": "drove",
+      "start": 2.8571
+    },
+    {
+      "text": "to",
+      "start": 3.0872
+    },
+    {
+      "text": "the",
+      "start": 3.3034
+    },
+    {
+      "text": "quiet",
+      "start": 3.5307
+    },
+    {
+      "text": "lake,",
+      "start": 3.8294
+    },
+    {
+      "text": "where",
+      "start": 4.2764
+    },
+    {
+      "text": "we",
+      "start": 4.5034
+    },
+    {
+      "text": "sat",
+      "start": 4.7224
+    },
+    {
+      "text": "beside",
+      "start": 4.9998
+    },
+    {
+      "text": "the",
+      "start": 5.3523
+    },
+    {
+      "text": "water",
+      "start": 5.5859
+    },
+    {
+      "text": "and",
+      "start": 5.843
+    },
+    {
+      "text": "watched",
+      "start": 6.0732
+    },
+    {
+      "text": "the",
+      "start": 6.4311
+    },
+    {
+      "text": "orange",
+      "start": 6.6648
+    },
+    {
+      "text": "sky",
+      "start": 6.9717
+    },
+    {
+      "text": "slowly",
+      "start": 7.315
+    },
+    {
+      "text": "fade",
+      "start": 7.6575
+    },
+    {
+      "text": "behind",
+      "start": 7.9271
+    },
+    {
+      "text": "the",
+      "start": 8.284
+    },
+    {
+      "text": "distant",
+      "start": 8.5177
+    },
+    {
+      "text": "mountains",
+      "start": 8.808
+    }
+  ]
+}

@@ -24,5 +24,10 @@ export const syntheticDemos = {
     audio: new URL("../public/audio/stage-05-synthetic.wav", import.meta.url).href,
     verified: false, timingStatus: "estimated-not-aligned",
     starts: [0.0355, 0.3111, 0.817, 1.372, 1.5753, 2.0141, 2.333, 2.5692, 2.7875, 3.0178, 3.2598, 3.5303, 4.1317, 4.3848, 4.629, 5.0843, 5.4599, 5.8382, 6.2123, 6.4689, 6.8364, 7.0843, 7.5501, 7.8728, 8.1965]
+  },
+  "stage-06": {
+    audio: new URL("../public/audio/stage-06-synthetic.wav", import.meta.url).href,
+    verified: false, timingStatus: "estimated-not-aligned",
+    starts: [0.047, 0.4672, 1.2342, 1.4251, 1.7992, 2.0756, 2.3763, 2.6333, 2.8571, 3.0872, 3.3034, 3.5307, 3.8294, 4.2764, 4.5034, 4.7224, 4.9998, 5.3523, 5.5859, 5.843, 6.0732, 6.4311, 6.6648, 6.9717, 7.315, 7.6575, 7.9271, 8.284, 8.5177, 8.808]
   }
 };

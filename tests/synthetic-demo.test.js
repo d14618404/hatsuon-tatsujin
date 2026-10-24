@@ -38,3 +38,8 @@ test('stage 05 is a 25-word MEDIUM stage',()=>{
  assert.equal(stage5.difficulty,'MEDIUM');
  assert.equal(stage5.words.length,25);
 });
+test('stage 06 is a 30-word MEDIUM stage',()=>{
+ const stage6=stages.find(stage=>stage.id==='stage-06');
+ assert.equal(stage6.difficulty,'MEDIUM');
+ assert.equal(stage6.words.length,30);
+});
