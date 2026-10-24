@@ -67,3 +67,7 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 #speeds.choose-speed{outline:2px solid var(--gold);outline-offset:3px;border-radius:.4cqw;background:#e8bd6620}
 @media(prefers-reduced-motion:reduce){.stick.strike{animation-duration:.01s}#sentence span{transition:none}}
 .brand h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.7cqw}
+.notice:empty,#mode-status:empty{display:none}
+.quiet,.primary,.speed button,.speed>span{font-size:clamp(12px,.9cqw,15px)}
+.stage-heading span{font-size:clamp(11px,.8cqw,14px)}
+.stage-heading h2{font-size:clamp(13px,1cqw,17px)}
