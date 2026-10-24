@@ -1,0 +1,93 @@
+{
+  "stageId": "stage-04",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-04-synthetic.wav",
+  "duration": 5.87469387755102,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "words": [
+    {
+      "text": "After",
+      "start": 0.03
+    },
+    {
+      "text": "school,",
+      "start": 0.4306
+    },
+    {
+      "text": "my",
+      "start": 1.0332
+    },
+    {
+      "text": "friends",
+      "start": 1.2557
+    },
+    {
+      "text": "and",
+      "start": 1.5452
+    },
+    {
+      "text": "I",
+      "start": 1.7427
+    },
+    {
+      "text": "walked",
+      "start": 2.1941
+    },
+    {
+      "text": "through",
+      "start": 2.4527
+    },
+    {
+      "text": "the",
+      "start": 2.6775
+    },
+    {
+      "text": "quiet",
+      "start": 2.878
+    },
+    {
+      "text": "park,",
+      "start": 3.1415
+    },
+    {
+      "text": "where",
+      "start": 3.593
+    },
+    {
+      "text": "we",
+      "start": 3.8126
+    },
+    {
+      "text": "found",
+      "start": 4.0244
+    },
+    {
+      "text": "a",
+      "start": 4.3089
+    },
+    {
+      "text": "small",
+      "start": 4.505
+    },
+    {
+      "text": "bridge",
+      "start": 4.7974
+    },
+    {
+      "text": "beside",
+      "start": 5.0533
+    },
+    {
+      "text": "the",
+      "start": 5.3943
+    },
+    {
+      "text": "river",
+      "start": 5.6204
+    }
+  ]
+}

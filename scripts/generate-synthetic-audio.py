@@ -12,6 +12,7 @@ STAGES = {
     'stage-01': 'The little girl opened the wooden door and discovered a beautiful garden behind the house'.split(),
     'stage-02': 'My brother found a small black cat under the old wooden bridge'.split(),
     'stage-03': 'We waited for the morning train, but it never came to the station'.split(),
+    'stage-04': 'After school, my friends and I walked through the quiet park, where we found a small bridge beside the river'.split(),
 }
 VOICE = 'Samantha'
 RATE = 170

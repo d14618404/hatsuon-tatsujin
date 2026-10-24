@@ -26,3 +26,10 @@ test('stage 03 keeps the spoken pause before but',()=>{
  const starts=syntheticDemos['stage-03'].starts;
  assert.ok(starts[6]-starts[5]>.4);
 });
+test('stage difficulty advances from short EASY stages to a 20-word MEDIUM stage',()=>{
+ const stage3=stages.find(stage=>stage.id==='stage-03');
+ const stage4=stages.find(stage=>stage.id==='stage-04');
+ assert.equal(stage3.difficulty,'EASY');
+ assert.equal(stage4.difficulty,'MEDIUM');
+ assert.equal(stage4.words.length,20);
+});

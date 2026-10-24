@@ -9,9 +9,14 @@ export const stages = [{
   audio:new URL('../public/audio/stage-02.mp3',import.meta.url).href, verified:false,
   words:[['My','My','function'],['brother','BROther','content'],['found','FOUND','content'],['a','a','function'],['small','SMALL','content'],['black','BLACK','content'],['cat','CAT','content'],['under','under','function'],['the','the','function'],['old','OLD','content'],['wooden','WOODen','content'],['bridge','BRIDGE','content']].map(([text,label,kind])=>({text,label,kind,start:null}))
 },{
-  id:'stage-03', title:'来なかった朝の列車', difficulty:'MEDIUM',
+  id:'stage-03', title:'来なかった朝の列車', difficulty:'EASY',
   sentence:'We waited for the morning train, but it never came to the station.',
   audio:new URL('../public/audio/stage-03.mp3',import.meta.url).href, verified:false,
   words:[['We','We','function'],['waited','WAITed','content'],['for','for','function'],['the','the','function'],['morning','MORNing','content'],['train,','TRAIN','content'],['but','but','function'],['it','it','function'],['never','NEVer','content'],['came','CAME','content'],['to','to','function'],['the','the','function'],['station','STAtion','content']].map(([text,label,kind])=>({text,label,kind,start:null}))
+},{
+  id:'stage-04', title:'川辺の小さな橋', difficulty:'MEDIUM',
+  sentence:'After school, my friends and I walked through the quiet park, where we found a small bridge beside the river.',
+  audio:new URL('../public/audio/stage-04.mp3',import.meta.url).href, verified:false,
+  words:[['After','AFter','function'],['school,','SCHOOL','content'],['my','my','function'],['friends','FRIENDS','content'],['and','and','function'],['I','I','function'],['walked','WALKED','content'],['through','through','function'],['the','the','function'],['quiet','QUIet','content'],['park,','PARK','content'],['where','where','function'],['we','we','function'],['found','FOUND','content'],['a','a','function'],['small','SMALL','content'],['bridge','BRIDGE','content'],['beside','beside','function'],['the','the','function'],['river','RIVer','content']].map(([text,label,kind])=>({text,label,kind,start:null}))
 }];
 export function lessonReady(stage){return stage.verified===true && stage.words.every((w,i)=>Number.isFinite(w.start)&&w.start>=0&&(i===0||w.start>stage.words[i-1].start));}
