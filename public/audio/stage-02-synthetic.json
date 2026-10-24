@@ -1,0 +1,61 @@
+{
+  "stageId": "stage-02",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-02-synthetic.wav",
+  "duration": 3.3669387755102043,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "words": [
+    {
+      "text": "My",
+      "start": 0.0355
+    },
+    {
+      "text": "brother",
+      "start": 0.3094
+    },
+    {
+      "text": "found",
+      "start": 0.573
+    },
+    {
+      "text": "a",
+      "start": 0.8836
+    },
+    {
+      "text": "small",
+      "start": 1.0977
+    },
+    {
+      "text": "black",
+      "start": 1.417
+    },
+    {
+      "text": "cat",
+      "start": 1.6891
+    },
+    {
+      "text": "under",
+      "start": 1.9564
+    },
+    {
+      "text": "the",
+      "start": 2.2278
+    },
+    {
+      "text": "old",
+      "start": 2.4746
+    },
+    {
+      "text": "wooden",
+      "start": 2.7676
+    },
+    {
+      "text": "bridge",
+      "start": 3.0501
+    }
+  ]
+}
