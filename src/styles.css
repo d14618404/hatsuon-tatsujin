@@ -80,3 +80,8 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .keyboard-hint.right kbd{border-color:#bce9ff;background:radial-gradient(circle at 25% 20%,#57ccff 0,transparent 32%),linear-gradient(#008cff,#0063da);box-shadow:inset 0 0 0 2px #ffffff24,0 3px 0 #174679,0 0 8px #008aff88}
 .keyboard-hint kbd b{font-size:clamp(17px,1.35cqw,22px);line-height:1}
 .keyboard-hint kbd small{font:700 clamp(8px,.55cqw,10px)/1 sans-serif;color:#dce3ef}
+.stage-card{position:relative;transition:background-color .15s,border-color .15s,box-shadow .15s}
+.stage-card:hover{border-color:#e7ca8d;background:#ffffff12}
+.stage-card.selected{border-color:#ffe09a;background:linear-gradient(135deg,#c99c3f42,#6f4d172e);box-shadow:inset 0 0 0 2px #ffe09a42,0 0 18px #d7a94724}
+.stage-card.selected strong{color:#ffe5a8}
+.stage-card.selected:after{content:"✓ 選択中";position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:999px;background:#e8bd66;color:#241a12;font-size:11px;font-weight:800;letter-spacing:.04em}
