@@ -1,0 +1,62 @@
+{
+  "drum": {
+    "tile": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "trim": [
+      108,
+      187,
+      540,
+      538
+    ],
+    "alphaThreshold": 32
+  },
+  "drumstick-left": {
+    "tile": [
+      627,
+      0,
+      627,
+      627
+    ],
+    "trim": [
+      172,
+      196,
+      495,
+      531
+    ],
+    "alphaThreshold": 32
+  },
+  "drumstick-right": {
+    "tile": [
+      0,
+      627,
+      627,
+      627
+    ],
+    "trim": [
+      149,
+      122,
+      508,
+      479
+    ],
+    "alphaThreshold": 32
+  },
+  "sentence-frame": {
+    "tile": [
+      627,
+      627,
+      627,
+      627
+    ],
+    "trim": [
+      83,
+      209,
+      556,
+      388
+    ],
+    "alphaThreshold": 32
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "stageId": "stage-01",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-01-synthetic.wav",
+  "duration": 4.179637188208617,
+  "timingStatus": "estimated-not-aligned",
+  "verified": false,
+  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "words": [
+    {
+      "text": "The",
+      "start": 0.0467
+    },
+    {
+      "text": "little",
+      "start": 0.2861
+    },
+    {
+      "text": "girl",
+      "start": 0.5397
+    },
+    {
+      "text": "opened",
+      "start": 0.7415
+    },
+    {
+      "text": "the",
+      "start": 1.042
+    },
+    {
+      "text": "wooden",
+      "start": 1.2813
+    },
+    {
+      "text": "door",
+      "start": 1.5553
+    },
+    {
+      "text": "and",
+      "start": 1.7514
+    },
+    {
+      "text": "discovered",
+      "start": 1.9872
+    },
+    {
+      "text": "a",
+      "start": 2.3889
+    },
+    {
+      "text": "beautiful",
+      "start": 2.5966
+    },
+    {
+      "text": "garden",
+      "start": 2.9609
+    },
+    {
+      "text": "behind",
+      "start": 3.2466
+    },
+    {
+      "text": "the",
+      "start": 3.6123
+    },
+    {
+      "text": "house",
+      "start": 3.8516
+    }
+  ]
+}
