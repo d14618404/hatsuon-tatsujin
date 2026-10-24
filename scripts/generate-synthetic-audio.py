@@ -22,20 +22,34 @@ def synth(text, target):
                     '--data-format=LEI16@22050', text], check=True)
 
 
-def bounds(path):
+def voiced_spans(path, minimum_gap=.12):
     with wave.open(str(path)) as audio:
         sr = audio.getframerate()
         samples = array.array('h', audio.readframes(audio.getnframes()))
     active = [i for i, value in enumerate(samples) if abs(value) > 180]
     if not active:
         raise RuntimeError('TTS output is empty or silent. Run with access to macOS speech services.')
-    return active[0] / sr, (active[-1] + 1) / sr, len(samples) / sr
+    spans = []
+    start = previous = active[0]
+    for index in active[1:]:
+        if index - previous > minimum_gap * sr:
+            spans.append((start / sr, (previous + 1) / sr))
+            start = index
+        previous = index
+    spans.append((start / sr, (previous + 1) / sr))
+    return spans, len(samples) / sr
+
+
+def bounds(path):
+    spans, duration = voiced_spans(path)
+    return spans[0][0], spans[-1][1], duration
 
 
 def generate(stage_id, words):
     out = ROOT / f'public/audio/{stage_id}-synthetic.wav'
     synth(' '.join(words) + '.', out)
     first, last, duration = bounds(out)
+    phrase_spans, _ = voiced_spans(out)
     weights = []
     with tempfile.TemporaryDirectory(prefix='rhythm-tts-') as folder:
         for i, word in enumerate(words):
@@ -43,17 +57,30 @@ def generate(stage_id, words):
             synth(word, path)
             a, b, _ = bounds(path)
             weights.append(max(.06, b - a))
-    scale = (last - first) / sum(weights)
+    group_starts = [0] + [i + 1 for i, word in enumerate(words[:-1])
+                          if word.endswith((',', ';', ':', '!', '?'))]
+    groups = list(zip(group_starts, group_starts[1:] + [len(words)]))
     starts = []
-    cursor = first
-    for weight in weights:
-        starts.append(round(cursor, 4))
-        cursor += weight * scale
+    if len(groups) == len(phrase_spans):
+        for (begin, end), (phrase_start, phrase_end) in zip(groups, phrase_spans):
+            scale = (phrase_end - phrase_start) / sum(weights[begin:end])
+            cursor = phrase_start
+            for weight in weights[begin:end]:
+                starts.append(round(cursor, 4))
+                cursor += weight * scale
+        method = 'Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.'
+    else:
+        scale = (last - first) / sum(weights)
+        cursor = first
+        for weight in weights:
+            starts.append(round(cursor, 4))
+            cursor += weight * scale
+        method = 'Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.'
     metadata = {
         'stageId': stage_id, 'voice': VOICE, 'locale': 'en-US', 'wordsPerMinute': RATE,
         'audioFile': f'{stage_id}-synthetic.wav', 'duration': duration,
         'timingStatus': 'estimated-not-aligned', 'verified': False,
-        'method': 'Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.',
+        'method': method,
         'words': [{'text': word, 'start': start} for word, start in zip(words, starts)],
     }
     (ROOT / f'public/audio/{stage_id}-synthetic.json').write_text(

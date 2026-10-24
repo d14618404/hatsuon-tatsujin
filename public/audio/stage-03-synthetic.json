@@ -7,7 +7,7 @@
   "duration": 3.5062585034013605,
   "timingStatus": "estimated-not-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
   "words": [
     {
       "text": "We",
@@ -15,51 +15,51 @@
     },
     {
       "text": "waited",
-      "start": 0.2682
+      "start": 0.258
     },
     {
       "text": "for",
-      "start": 0.5536
+      "start": 0.5307
     },
     {
       "text": "the",
-      "start": 0.81
+      "start": 0.7756
     },
     {
       "text": "morning",
-      "start": 1.056
+      "start": 1.0106
     },
     {
       "text": "train,",
-      "start": 1.3602
+      "start": 1.3013
     },
     {
       "text": "but",
-      "start": 1.6482
+      "start": 1.7994
     },
     {
       "text": "it",
-      "start": 1.8751
+      "start": 2.0075
     },
     {
       "text": "never",
-      "start": 2.0168
+      "start": 2.1374
     },
     {
       "text": "came",
-      "start": 2.2691
+      "start": 2.3688
     },
     {
       "text": "to",
-      "start": 2.5614
+      "start": 2.6368
     },
     {
       "text": "the",
-      "start": 2.7955
+      "start": 2.8515
     },
     {
       "text": "station",
-      "start": 3.0415
+      "start": 3.0771
     }
   ]
 }

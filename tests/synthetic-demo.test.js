@@ -22,3 +22,7 @@ test('each stage has an audible synthetic WAV and separate unverified timestamps
  assert.deepEqual(metadata.words.map(w=>w.text),stage.words.map(w=>w.text));
  });
 });
+test('stage 03 keeps the spoken pause before but',()=>{
+ const starts=syntheticDemos['stage-03'].starts;
+ assert.ok(starts[6]-starts[5]>.4);
+});

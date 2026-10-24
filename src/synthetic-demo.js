@@ -13,6 +13,6 @@ export const syntheticDemos = {
   "stage-03": {
     audio: new URL("../public/audio/stage-03-synthetic.wav", import.meta.url).href,
     verified: false, timingStatus: "estimated-not-aligned",
-    starts: [0.0376, 0.2682, 0.5536, 0.81, 1.056, 1.3602, 1.6482, 1.8751, 2.0168, 2.2691, 2.5614, 2.7955, 3.0415]
+    starts: [0.0376, 0.258, 0.5307, 0.7756, 1.0106, 1.3013, 1.7994, 2.0075, 2.1374, 2.3688, 2.6368, 2.8515, 3.0771]
   }
 };
