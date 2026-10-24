@@ -64,4 +64,5 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 
 @media(max-height:500px){dialog{padding:16px;max-height:94svh}dialog h2{font-size:20px;margin:8px}.stage-card{padding:10px;margin-bottom:8px}.dialog-note{font-size:10px;margin:7px}.result-stats{margin:12px 0}.result-score{font-size:36px}}
 @media(orientation:portrait) and (max-width:900px){.game{visibility:hidden}.rotate{display:grid;position:fixed;inset:0;place-content:center;text-align:center;padding:30px;background:linear-gradient(#061635ba,#061635eb),url('../public/assets/english-rhythm-background.webp') center/cover}.rotate>span{font-size:70px;color:var(--gold)}.rotate h2{font-size:21px}.rotate p{font-size:13px;line-height:2}}
+#speeds.choose-speed{outline:2px solid var(--gold);outline-offset:3px;border-radius:.4cqw;background:#e8bd6620}
 @media(prefers-reduced-motion:reduce){.stick.strike{animation-duration:.01s}#sentence span{transition:none}}
