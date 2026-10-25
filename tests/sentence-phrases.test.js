@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {stages} from '../src/stages.js';
-import {makePhraseRanges,phraseIndexForWord} from '../src/sentence-phrases.js';
+import {makePhraseRanges,phraseIndexForWord,wordIndexAt} from '../src/sentence-phrases.js';
 
 test('stage phrase ranges cover every word once in short readable groups',()=>{
   for(const stage of stages){
@@ -21,4 +21,12 @@ test('the active phrase changes at its first word',()=>{
   assert.equal(phraseIndexForWord(ranges,2),0);
   assert.equal(phraseIndexForWord(ranges,3),1);
   assert.equal(phraseIndexForWord(ranges,6),2);
+});
+
+test('the spoken word advances at each audio timestamp without findLastIndex',()=>{
+  const words=[{start:.1},{start:.4},{start:1.2}];
+  assert.equal(wordIndexAt(words,-.01),-1);
+  assert.equal(wordIndexAt(words,.1),0);
+  assert.equal(wordIndexAt(words,.8),1);
+  assert.equal(wordIndexAt(words,1.2),2);
 });

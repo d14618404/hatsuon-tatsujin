@@ -13,3 +13,10 @@ export function phraseIndexForWord(ranges,wordIndex){
   const found=ranges.findIndex(({start,end})=>index>=start&&index<end);
   return found<0?ranges.length-1:found;
 }
+
+export function wordIndexAt(words,time){
+  if(time<0)return -1;
+  let index=-1;
+  for(let i=0;i<words.length&&words[i].start<=time;i++)index=i;
+  return index;
+}
