@@ -69,6 +69,7 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .brand h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.7cqw}
 .notice:empty,#mode-status:empty{display:none}
 .quiet,.primary,.speed button,.speed>span{font-size:clamp(12px,.9cqw,15px)}
+.speed,.speed>span,#speeds{flex:none}.speed>span{white-space:nowrap}#listen,#restart{width:clamp(84px,9.5cqw,150px)}#start{width:clamp(118px,14cqw,180px)}
 .stage-heading{left:30%;top:.25cqw;width:34%;padding:.35cqw 1cqw .45cqw;text-align:center;white-space:nowrap;z-index:3;background:linear-gradient(90deg,transparent,#031126e8 12% 88%,transparent)}
 .stage-heading span{display:block;font-size:clamp(11px,.75cqw,14px);font-weight:700;line-height:1.2;color:#ffe09a;text-shadow:0 1px 3px #000}
 .stage-heading h2{margin:.2cqw 0 0;font-size:clamp(15px,1.05cqw,20px);font-weight:700;line-height:1.25;letter-spacing:.12em;color:#fff4dc;text-shadow:0 2px 5px #000}
@@ -101,3 +102,4 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
  #stage-dialog .stage-card{padding:9px 10px}
  #stage-dialog .stage-card strong{font-size:16px;margin:5px 0}
 }
+@media(pointer:coarse){.stage-heading h2{font-size:clamp(13px,.9cqw,16px);line-height:1.15}}

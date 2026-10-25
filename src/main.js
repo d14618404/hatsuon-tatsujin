@@ -14,7 +14,7 @@ const bestKey=()=>`english-rhythm:v1:${mode}:${stage.id}:${rate}`;
 function best(){try{return Number(localStorage.getItem(bestKey())||0);}catch{return 0;}}
 function updateBest(){$('#best').textContent=best().toLocaleString();}
 function notice(text){$('#notice').textContent=text;}
-function updateControls(){const active=busy();$$('[data-rate]').forEach(b=>{b.disabled=active;b.classList.toggle('selected',Number(b.dataset.rate)===rate);b.setAttribute('aria-pressed',String(Number(b.dataset.rate)===rate));});$('#stage-button').disabled=active||state==='loading';$('#listen').disabled=!ready||active;$('#start').disabled=!ready||state==='starting';$('#start').textContent=state==='paused'?'▶ 再開':state==='listening'?'■ 試聴を止める':state==='playing'?'Ⅱ 一時停止':'▶ 練習スタート';$('#restart').hidden=!active;}
+function updateControls(){const active=busy();$$('[data-rate]').forEach(b=>{b.disabled=active;b.classList.toggle('selected',Number(b.dataset.rate)===rate);b.setAttribute('aria-pressed',String(Number(b.dataset.rate)===rate));});$('#stage-button').disabled=active||state==='loading';$('#listen').disabled=!ready||active;$('#listen').hidden=active;$('#start').disabled=!ready||state==='starting';$('#start').textContent=state==='paused'?'▶ 再開':state==='listening'?'■ 試聴を止める':state==='playing'?'Ⅱ 一時停止':'▶ 練習スタート';$('#restart').hidden=!active;}
 function renderScore(){$('#score').textContent=String(score).padStart(5,'0');$('#combo').textContent=String(combo).padStart(3,'0');}
 function reset(){playbackRequest++;clock.stop();score=combo=maxCombo=0;counts={PERFECT:0,GOOD:0,MISS:0};words.forEach(w=>delete w.result);feedbackUntil=0;$('#feedback').textContent='';renderScore();}
 function returnToStart(){
