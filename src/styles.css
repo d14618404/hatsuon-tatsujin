@@ -95,3 +95,10 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 #stage-scroll-hint{position:absolute;z-index:2;left:2px;right:9px;bottom:0;height:42px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:1px;pointer-events:none;color:#ffe09a;font:bold 28px/1 Georgia;background:linear-gradient(transparent,#07152a 78%);text-shadow:0 1px 5px #000}
 #stage-scroll-hint[hidden]{display:none}
 #choose-stage{justify-self:center}
+@media(max-height:500px){
+ #stage-dialog[open]{height:calc(100svh - 12px);max-height:calc(100svh - 12px);padding:14px 16px}
+ #stage-dialog .stage-list-wrap{margin-bottom:10px}
+ #stage-dialog .stage-card{padding:9px 10px}
+ #stage-dialog .stage-card strong{font-size:16px;margin:5px 0}
+ #stage-dialog .stage-card small{font-size:11px;line-height:1.4}
+}
