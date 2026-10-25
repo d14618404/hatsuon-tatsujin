@@ -54,7 +54,7 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .stick{display:block;width:10.5%;height:auto;top:4%;z-index:2}.stick.left{left:39%;transform:rotate(10deg)}.stick.right{right:39%;transform:rotate(-10deg)}
 @keyframes strike-left{50%{transform:translateY(1.6cqw) rotate(29deg)}}
 @keyframes strike-right{50%{transform:translateY(1.6cqw) rotate(-29deg)}}
-.keyboard-hint{top:52%;width:15%;min-height:4.4cqw;border:.2cqw solid #e9c172;border-radius:3cqw;background:#061227ed;padding:.55cqw .75cqw;gap:.12cqw .55cqw;grid-template-columns:auto 1fr}
+.keyboard-hint{top:52%;width:15%;min-height:4.4cqw;border:.2cqw solid #e9c172;border-radius:3cqw;background:#061227ed;padding:.55cqw .75cqw .55cqw 1.15cqw;gap:.12cqw .55cqw;grid-template-columns:auto 1fr}
 .keyboard-hint.left{left:2%;right:auto}.keyboard-hint.right{left:auto;right:2%}
 .keyboard-hint kbd{width:2.5cqw;height:2.5cqw;border-radius:50%;font-size:1.4cqw;border:.2cqw solid #ff99a5;background:#e54359;color:white;box-shadow:inset 0 0 0 .2cqw #a72b40}
 .keyboard-hint.right kbd{background:#188be0;border-color:#75d9ff;box-shadow:inset 0 0 0 .2cqw #1664a7}
