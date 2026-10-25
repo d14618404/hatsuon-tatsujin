@@ -25,6 +25,13 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 #sentence .sentence-line{min-height:1.15em;overflow:hidden;text-align:center;white-space:nowrap;text-overflow:clip}
 #sentence .sentence-line.next{font-size:.76em;color:#b8c1d1;opacity:.72}
 #sentence .sentence-line:empty{display:none}
+#sentence.full-view{display:block;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#d8b66d transparent}
+#sentence.full-view::-webkit-scrollbar{width:4px}
+#sentence.full-view::-webkit-scrollbar-thumb{background:#d8b66d;border-radius:4px}
+.sentence-full{min-height:100%;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:0 .28em;font-size:.9em;line-height:1.35;text-align:center}
+.sentence-full span{color:#c7cfdd;transition:color .12s,opacity .12s}
+.sentence-full span.heard{opacity:.55}
+#sentence .sentence-full span.speaking{opacity:1;color:#ffdc76}
 .lane-top{top:26.5%;left:4%;right:4%;font-size:.7cqw;justify-content:flex-end}
 .lane-top>span:first-child{display:none}#mode-status{font-size:.7cqw;background:#05132bdd;border-radius:1cqw;padding:.1cqw .8cqw}
 .lane{top:29%;left:0;width:100%;height:28.5%;border-top:.45cqw solid #e8be72;border-bottom:.45cqw solid #e8be72;background-color:#05142e;background-image:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 .45cqw,#15356855 .5cqw .62cqw,transparent .7cqw 1cqw);background-size:4.4cqw 2.4cqw;box-shadow:0 -.2cqw 0 #294a76,0 .2cqw 0 #294a76,inset 0 0 3cqw #020716}
@@ -115,6 +122,6 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
  .combo-badge{top:-.75cqw;width:9.4cqw;height:clamp(31px,4.25cqw,46px);padding:2px 3px;display:grid;grid-template-rows:9px minmax(0,1fr);place-items:center;overflow:hidden}
  .combo-badge>span{font-size:8px;line-height:9px;white-space:nowrap}
  #combo{align-self:start;font-size:clamp(17px,2cqw,28px);line-height:1;white-space:nowrap}
- .sentence-panel{top:11.5%;height:15%;border-width:1.1cqw 3.2cqw;border-image-width:1.4cqw 3.2cqw;padding:.3cqw 1.5cqw}
+ .sentence-panel{top:11.5%;height:16.5%;border-width:1cqw 3.2cqw;border-image-width:1.3cqw 3.2cqw;padding:.25cqw 1.5cqw}
  #sentence{font-size:clamp(14px,1.7cqw,21px);gap:.15cqw}
 }
