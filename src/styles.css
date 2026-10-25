@@ -16,12 +16,15 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .stage-heading span{font-size:.65cqw}.stage-heading h2{font-size:.8cqw;margin:.3cqw 0}
 .score-box{position:absolute;right:15%;top:.2cqw;grid-template-columns:auto auto;column-gap:.7cqw;align-items:center}
 .score-box>span{font-size:.65cqw}.score-box strong{font:bold 1.6cqw Arial,sans-serif}.score-box small{grid-column:span 2;font-size:.6cqw}
-.combo-badge{position:absolute;right:0;top:-.3cqw;width:12cqw;height:6.1cqw;border:.2cqw solid #f1c671;border-radius:50% 50% 15% 15% / 45% 45% 15% 15%;background:linear-gradient(#030d22,#082442);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;box-shadow:inset 0 0 0 .25cqw #07162a,0 0 1cqw #07152c}
-.combo-badge>span{font:800 1.3cqw Arial,sans-serif;color:#ffdb84}
-#combo{font:800 3.3cqw Arial,sans-serif;line-height:1.05;color:#fff;padding:0;font-variant-numeric:tabular-nums}
-.sentence-panel{top:10%;left:2%;width:96%;height:16%;border-width:1.7cqw 4cqw;border-image-width:2cqw 4cqw;background:#020e25eb}
+.combo-badge{position:absolute;right:0;top:-.5cqw;width:10cqw;height:clamp(34px,5cqw,64px);border:.2cqw solid #f1c671;border-radius:50% 50% 15% 15% / 45% 45% 15% 15%;background:linear-gradient(#030d22,#082442);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;box-shadow:inset 0 0 0 .25cqw #07162a,0 0 1cqw #07152c;overflow:hidden}
+.combo-badge>span{font:800 clamp(9px,1cqw,15px)/1 Arial,sans-serif;color:#ffdb84}
+#combo{font:800 clamp(20px,2.6cqw,42px)/1 Arial,sans-serif;color:#fff;padding:0;font-variant-numeric:tabular-nums}
+.sentence-panel{top:13%;left:2%;width:96%;height:14.5%;border-width:1.4cqw 3.5cqw;border-image-width:1.8cqw 3.5cqw;background:#020e25eb;padding:.25cqw 1cqw}
 .sentence-caption{display:none}
-#sentence{font-family:'Arial Narrow','Helvetica Neue',Arial,sans-serif;font-size:2cqw;font-weight:750;line-height:1.35;text-wrap:balance}
+#sentence{width:100%;min-width:0;display:grid;gap:.35cqw;font-family:'Arial Narrow','Helvetica Neue',Arial,sans-serif;font-size:clamp(13px,1.65cqw,26px);font-weight:750;line-height:1.15}
+#sentence .sentence-line{min-height:1.15em;overflow:hidden;text-align:center;white-space:nowrap;text-overflow:clip}
+#sentence .sentence-line.next{font-size:.76em;color:#b8c1d1;opacity:.72}
+#sentence .sentence-line:empty{visibility:hidden}
 .lane-top{top:26.5%;left:4%;right:4%;font-size:.7cqw;justify-content:flex-end}
 .lane-top>span:first-child{display:none}#mode-status{font-size:.7cqw;background:#05132bdd;border-radius:1cqw;padding:.1cqw .8cqw}
 .lane{top:29%;left:0;width:100%;height:28.5%;border-top:.45cqw solid #e8be72;border-bottom:.45cqw solid #e8be72;background-color:#05142e;background-image:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 .45cqw,#15356855 .5cqw .62cqw,transparent .7cqw 1cqw);background-size:4.4cqw 2.4cqw;box-shadow:0 -.2cqw 0 #294a76,0 .2cqw 0 #294a76,inset 0 0 3cqw #020716}
@@ -109,8 +112,9 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
  .score-box>span{font-size:clamp(9px,1cqw,13px)}
  .score-box strong{font-size:clamp(18px,2.1cqw,26px);line-height:1}
  .score-box small{font-size:clamp(8px,.8cqw,11px)}
- .combo-badge{top:-.5cqw;width:10.5cqw;height:clamp(38px,5cqw,56px);padding:3px 3px 2px;display:grid;grid-template-rows:11px minmax(0,1fr);place-items:center;overflow:hidden}
- .combo-badge>span{font-size:9px;line-height:11px;white-space:nowrap}
- #combo{align-self:start;font-size:clamp(20px,2.4cqw,34px);line-height:1;white-space:nowrap}
- .sentence-panel{top:11%;height:15%}
+ .combo-badge{top:-.75cqw;width:9.4cqw;height:clamp(31px,4.25cqw,46px);padding:2px 3px;display:grid;grid-template-rows:9px minmax(0,1fr);place-items:center;overflow:hidden}
+ .combo-badge>span{font-size:8px;line-height:9px;white-space:nowrap}
+ #combo{align-self:start;font-size:clamp(17px,2cqw,28px);line-height:1;white-space:nowrap}
+ .sentence-panel{top:15%;height:13.5%;border-width:1.1cqw 3.2cqw;border-image-width:1.4cqw 3.2cqw;padding:.3cqw 1.5cqw}
+ #sentence{font-size:clamp(14px,1.7cqw,21px);gap:.15cqw}
 }
