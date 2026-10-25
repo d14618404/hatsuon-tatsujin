@@ -12,6 +12,8 @@ export class AudioClock{
  stop(){this.audio.pause();this.audio.currentTime=0;}
 }
 export class DrumSound{
- unlock(){this.context??=new AudioContext();if(this.context.state==='suspended')this.context.resume().catch(()=>{});}
- hit(kind){this.unlock();const c=this.context,t=c.currentTime,o=c.createOscillator(),g=c.createGain();o.type=kind==='content'?'sine':'triangle';o.frequency.setValueAtTime(kind==='content'?180:1300,t);o.frequency.exponentialRampToValueAtTime(kind==='content'?55:420,t+.12);g.gain.setValueAtTime(.22,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g).connect(c.destination);o.start(t);o.stop(t+.17);}
+ async unlock(){this.context??=new AudioContext();if(this.context.state==='suspended')await this.context.resume();}
+ tone(type,from,to,gain,duration,at){const c=this.context,o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(from,at);o.frequency.exponentialRampToValueAtTime(to,at+duration);g.gain.setValueAtTime(gain,at);g.gain.exponentialRampToValueAtTime(.001,at+duration);o.connect(g).connect(c.destination);o.start(at);o.stop(at+duration+.01);}
+ noise(gain,duration,frequency,at){const c=this.context,count=Math.ceil(c.sampleRate*duration),buffer=c.createBuffer(1,count,c.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<count;i++)data[i]=Math.random()*2-1;const source=c.createBufferSource(),filter=c.createBiquadFilter(),level=c.createGain();source.buffer=buffer;filter.type='bandpass';filter.frequency.setValueAtTime(frequency,at);filter.Q.setValueAtTime(.7,at);level.gain.setValueAtTime(gain,at);level.gain.exponentialRampToValueAtTime(.001,at+duration);source.connect(filter).connect(level).connect(c.destination);source.start(at);source.stop(at+duration+.01);}
+ async hit(kind){try{await this.unlock();if(this.context.state!=='running')return;const at=this.context.currentTime;if(kind==='content'){this.tone('sine',210,82,.26,.2,at);this.tone('triangle',430,170,.1,.12,at);this.noise(.055,.035,900,at);}else{this.tone('triangle',1550,720,.16,.09,at);this.noise(.13,.055,2300,at);}}catch{}}
 }
