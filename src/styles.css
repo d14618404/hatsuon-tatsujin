@@ -102,4 +102,15 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
  #stage-dialog .stage-card{padding:9px 10px}
  #stage-dialog .stage-card strong{font-size:16px;margin:5px 0}
 }
-@media(pointer:coarse){.stage-heading h2{font-size:clamp(13px,.9cqw,16px);line-height:1.15}}
+@media(pointer:coarse){
+ .stage-heading{top:-.15cqw}
+ .stage-heading h2{font-size:clamp(13px,.9cqw,16px);line-height:1.15}
+ .score-box{top:-.2cqw;right:14%}
+ .score-box>span{font-size:clamp(9px,1cqw,13px)}
+ .score-box strong{font-size:clamp(18px,2.1cqw,26px);line-height:1}
+ .score-box small{font-size:clamp(8px,.8cqw,11px)}
+ .combo-badge{top:-1cqw;width:11cqw;height:5.5cqw}
+ .combo-badge>span{font-size:clamp(10px,1.1cqw,14px)}
+ #combo{font-size:clamp(24px,2.8cqw,38px)}
+ .sentence-panel{top:11%;height:15%}
+}
