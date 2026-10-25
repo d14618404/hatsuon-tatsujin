@@ -86,6 +86,7 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .keyboard-hint.left{color:#ff7180}.keyboard-hint.right{color:#55c1ff}
 .keyboard-hint strong{font-size:clamp(15px,1.3cqw,21px);line-height:1.15;white-space:nowrap}
 .keyboard-hint span{font-size:clamp(10px,.7cqw,13px);line-height:1.2;white-space:nowrap}
+.keyboard-hint strong,.keyboard-hint span{justify-self:stretch;text-align:center}
 .keyboard-hint{top:34%;overflow:visible;z-index:3}
 .keyboard-hint kbd{width:clamp(38px,3cqw,50px);height:clamp(38px,3cqw,50px);grid-template-rows:1fr auto;padding:4px 3px 4px;border:2px solid #ffc0ac;border-radius:7px;background:radial-gradient(circle at 25% 20%,#ff8889 0,transparent 32%),linear-gradient(#ff4356,#d92743);box-shadow:inset 0 0 0 2px #ffffff24,0 3px 0 #781f31,0 0 8px #ff244f99;color:#fff}
 .keyboard-hint.right kbd{border-color:#bce9ff;background:radial-gradient(circle at 25% 20%,#57ccff 0,transparent 32%),linear-gradient(#008cff,#0063da);box-shadow:inset 0 0 0 2px #ffffff24,0 3px 0 #174679,0 0 8px #008aff88}
