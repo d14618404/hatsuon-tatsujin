@@ -50,14 +50,14 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .keyboard-hint.right kbd{background:#188be0;border-color:#75d9ff;box-shadow:inset 0 0 0 .2cqw #1664a7}
 .keyboard-hint strong{font:800 1.35cqw 'Arial Narrow',Arial,sans-serif}.keyboard-hint em{font-style:normal;font-weight:600;color:#f4f0e9;font-size:1.15cqw}.keyboard-hint span{font-size:.65cqw}
 .feedback{top:10%;left:30%;right:30%;font-size:2.5cqw;z-index:3}
-.controls{left:0;right:0;bottom:3%;height:8%;gap:1cqw;background:#031126ed;border-top:1px solid #dcb45c55;box-shadow:0 2cqw 0 #031126ed;z-index:5;padding:0 1cqw}
+.controls{left:0;right:0;bottom:2%;height:8%;gap:1cqw;background:#031126ed;border-top:1px solid #dcb45c55;box-shadow:0 2cqw 0 #031126ed;z-index:5;padding:0 1cqw}
 .quiet,.primary,.speed button{font-size:.75cqw;padding:.4cqw 1cqw}.primary{min-width:12cqw;box-shadow:none}.speed button{padding:.4cqw .7cqw}
-.notice{bottom:11.4%;font-size:.65cqw;left:27%;right:27%;background:#031126db;border-radius:.5cqw;padding:.15cqw;z-index:4}
+.notice{bottom:10.4%;font-size:.65cqw;left:27%;right:27%;background:#031126db;border-radius:.5cqw;padding:.15cqw;z-index:4}
 @media(pointer:coarse){
  .touch-pad{bottom:13%;height:21%;width:25%;border-radius:2.5cqw;z-index:3}
  .don{left:3%}.touch-pad.ka{right:3%}
- .controls{bottom:3%;height:8%;gap:.6cqw}.quiet,.primary,.speed button{font-size:1cqw;padding:.55cqw .8cqw}
- .notice{bottom:11.5%;left:28%;right:28%;font-size:.8cqw}
+ .controls{bottom:2%;height:8%;gap:.6cqw}.quiet,.primary,.speed button{font-size:1cqw;padding:.55cqw .8cqw}
+ .notice{bottom:10.5%;left:28%;right:28%;font-size:.8cqw}
  .stage-heading span,.stage-heading h2{font-size:.8cqw}.brand p{font-size:.65cqw}.score-box small{font-size:.65cqw}
  #mode-status{font-size:.8cqw}.lane-top{top:26.4%}
 }
