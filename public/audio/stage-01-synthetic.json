@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-01-synthetic.wav",
   "duration": 4.179637188208617,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "The",
@@ -15,59 +15,59 @@
     },
     {
       "text": "little",
-      "start": 0.2861
+      "start": 0.131
     },
     {
       "text": "girl",
-      "start": 0.5397
+      "start": 0.4196
     },
     {
       "text": "opened",
-      "start": 0.7415
+      "start": 0.7182
     },
     {
       "text": "the",
-      "start": 1.042
+      "start": 1.0592
     },
     {
       "text": "wooden",
-      "start": 1.2813
+      "start": 1.1338
     },
     {
       "text": "door",
-      "start": 1.5553
+      "start": 1.4538
     },
     {
       "text": "and",
-      "start": 1.7514
+      "start": 1.6884
     },
     {
       "text": "discovered",
-      "start": 1.9872
+      "start": 1.8058
     },
     {
       "text": "a",
-      "start": 2.3889
+      "start": 2.3391
     },
     {
       "text": "beautiful",
-      "start": 2.5966
+      "start": 2.4139
     },
     {
       "text": "garden",
-      "start": 2.9609
+      "start": 2.8726
     },
     {
       "text": "behind",
-      "start": 3.2466
+      "start": 3.2459
     },
     {
       "text": "the",
-      "start": 3.6123
+      "start": 3.6193
     },
     {
       "text": "house",
-      "start": 3.8516
+      "start": 3.6831
     }
   ]
 }

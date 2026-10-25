@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-02-synthetic.wav",
   "duration": 3.3669387755102043,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "My",
@@ -15,47 +15,47 @@
     },
     {
       "text": "brother",
-      "start": 0.3094
+      "start": 0.195
     },
     {
       "text": "found",
-      "start": 0.573
+      "start": 0.5472
     },
     {
       "text": "a",
-      "start": 0.8836
+      "start": 0.867
     },
     {
       "text": "small",
-      "start": 1.0977
+      "start": 0.9417
     },
     {
       "text": "black",
-      "start": 1.417
+      "start": 1.305
     },
     {
       "text": "cat",
-      "start": 1.6891
+      "start": 1.6349
     },
     {
       "text": "under",
-      "start": 1.9564
+      "start": 1.8699
     },
     {
       "text": "the",
-      "start": 2.2278
+      "start": 2.1258
     },
     {
       "text": "old",
-      "start": 2.4746
+      "start": 2.3075
     },
     {
       "text": "wooden",
-      "start": 2.7676
+      "start": 2.5843
     },
     {
       "text": "bridge",
-      "start": 3.0501
+      "start": 2.8832
     }
   ]
 }

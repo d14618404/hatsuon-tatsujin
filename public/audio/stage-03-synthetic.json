@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-03-synthetic.wav",
   "duration": 3.5062585034013605,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "We",
@@ -15,51 +15,51 @@
     },
     {
       "text": "waited",
-      "start": 0.258
+      "start": 0.1544
     },
     {
       "text": "for",
-      "start": 0.5307
+      "start": 0.4959
     },
     {
       "text": "the",
-      "start": 0.7756
+      "start": 0.6347
     },
     {
       "text": "morning",
-      "start": 1.0106
+      "start": 0.7519
     },
     {
       "text": "train,",
-      "start": 1.3013
+      "start": 1.1253
     },
     {
       "text": "but",
-      "start": 1.7994
+      "start": 1.776
     },
     {
       "text": "it",
-      "start": 2.0075
+      "start": 1.9148
     },
     {
       "text": "never",
-      "start": 2.1374
+      "start": 2.032
     },
     {
       "text": "came",
-      "start": 2.3688
+      "start": 2.3306
     },
     {
       "text": "to",
-      "start": 2.6368
+      "start": 2.6291
     },
     {
       "text": "the",
-      "start": 2.8515
+      "start": 2.7465
     },
     {
       "text": "station",
-      "start": 3.0771
+      "start": 2.8425
     }
   ]
 }

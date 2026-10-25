@@ -15,11 +15,12 @@ test('each stage has an audible synthetic WAV and separate unverified timestamps
  const duration=data.length/byteRate;
  assert.equal(demo.starts.length,stage.words.length);
  demo.starts.forEach((s,i)=>{assert.ok(s>=0&&s<duration);if(i)assert.ok(s>demo.starts[i-1]);});
- assert.equal(demo.verified,false);assert.equal(demo.timingStatus,'estimated-not-aligned');
+ assert.equal(demo.verified,false);assert.equal(demo.timingStatus,'engine-word-boundary-aligned');
  assert.ok(stage.words.every(w=>w.start===null));assert.equal(lessonReady(stage),false);
  const metadata=JSON.parse(await readFile(new URL(`../public/audio/${stage.id}-synthetic.json`,import.meta.url)));
  assert.deepEqual(metadata.words.map(w=>w.start),demo.starts);
  assert.deepEqual(metadata.words.map(w=>w.text),stage.words.map(w=>w.text));
+ assert.match(metadata.method,/speech-engine word-boundary passes/);
  });
 });
 test('stage 03 keeps the spoken pause before but',()=>{

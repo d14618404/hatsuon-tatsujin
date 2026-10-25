@@ -95,7 +95,7 @@ npm run build
 
 `public/audio/stage-*-synthetic.wav` は米国英語Samanthaによる全文合成音声です。実測済み音声がない場合に自動で選ばれ、LISTENとプレイの両方で再生します。ガイド音は重ねません。
 
-`src/synthetic-demo.js` に推定時刻、各ステージの `public/audio/stage-*-synthetic.json` に生成条件を保存します。本番用データは変更していません。時刻は各単語の単独発声長を全文の発声区間へ比例配分した推定値です。連結・強勢・ポーズの違いにより誤差があり、判定は動作確認用です。
+`src/synthetic-demo.js` に同期時刻、各ステージの `public/audio/stage-*-synthetic.json` に生成条件を保存します。本番用データは変更していません。時刻は全文の読み上げ中にmacOS音声エンジンが返す単語境界を採取し、WAVの最初の発音サンプルへ合わせています。
 
 macOSで `python3 scripts/generate-synthetic-audio.py` を実行すると全ステージを再生成できます。`--stage stage-03`を付けると指定ステージだけを生成します。追加パッケージ、外部API、APIキーは不要です。再生側は同梱WAVを使うためmacOSは不要です。実ブラウザでの音質・同期確認は未実施です。
 

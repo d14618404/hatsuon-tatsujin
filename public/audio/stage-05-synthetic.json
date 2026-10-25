@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-05-synthetic.wav",
   "duration": 8.753968253968255,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "On",
@@ -15,99 +15,99 @@
     },
     {
       "text": "Saturday",
-      "start": 0.3111
+      "start": 0.195
     },
     {
       "text": "morning,",
-      "start": 0.817
+      "start": 0.7069
     },
     {
       "text": "our",
-      "start": 1.372
+      "start": 1.358
     },
     {
       "text": "science",
-      "start": 1.5753
+      "start": 1.4964
     },
     {
       "text": "teacher",
-      "start": 2.0141
+      "start": 1.9873
     },
     {
       "text": "took",
-      "start": 2.333
+      "start": 2.3498
     },
     {
       "text": "us",
-      "start": 2.5692
+      "start": 2.627
     },
     {
       "text": "to",
-      "start": 2.7875
+      "start": 2.7979
     },
     {
       "text": "the",
-      "start": 3.0178
+      "start": 2.9151
     },
     {
       "text": "city",
-      "start": 3.2598
+      "start": 3.0216
     },
     {
       "text": "museum,",
-      "start": 3.5303
+      "start": 3.3313
     },
     {
       "text": "where",
-      "start": 4.1317
+      "start": 4.1205
     },
     {
       "text": "we",
-      "start": 4.3848
+      "start": 4.3231
     },
     {
       "text": "carefully",
-      "start": 4.629
+      "start": 4.4617
     },
     {
       "text": "studied",
-      "start": 5.0843
+      "start": 5.0488
     },
     {
       "text": "ancient",
-      "start": 5.4599
+      "start": 5.4646
     },
     {
       "text": "maps",
-      "start": 5.8382
+      "start": 5.8803
     },
     {
       "text": "and",
-      "start": 6.2123
+      "start": 6.211
     },
     {
       "text": "listened",
-      "start": 6.4689
+      "start": 6.3497
     },
     {
       "text": "to",
-      "start": 6.8364
+      "start": 6.7443
     },
     {
       "text": "stories",
-      "start": 7.0843
+      "start": 6.8404
     },
     {
       "text": "about",
-      "start": 7.5501
+      "start": 7.2989
     },
     {
       "text": "distant",
-      "start": 7.8728
+      "start": 7.5977
     },
     {
       "text": "travelers",
-      "start": 8.1965
+      "start": 7.9924
     }
   ]
 }

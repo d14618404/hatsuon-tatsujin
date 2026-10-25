@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-06-synthetic.wav",
   "duration": 9.264807256235828,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "Before",
@@ -15,119 +15,119 @@
     },
     {
       "text": "sunset,",
-      "start": 0.4672
+      "start": 0.4202
     },
     {
       "text": "our",
-      "start": 1.2342
+      "start": 1.2306
     },
     {
       "text": "family",
-      "start": 1.4251
+      "start": 1.3692
     },
     {
       "text": "packed",
-      "start": 1.7992
+      "start": 1.8816
     },
     {
       "text": "some",
-      "start": 2.0756
+      "start": 2.2013
     },
     {
       "text": "food",
-      "start": 2.3763
+      "start": 2.4146
     },
     {
       "text": "and",
-      "start": 2.6333
+      "start": 2.6387
     },
     {
       "text": "drove",
-      "start": 2.8571
+      "start": 2.788
     },
     {
       "text": "to",
-      "start": 3.0872
+      "start": 3.0334
     },
     {
       "text": "the",
-      "start": 3.3034
+      "start": 3.1507
     },
     {
       "text": "quiet",
-      "start": 3.5307
+      "start": 3.2465
     },
     {
       "text": "lake,",
-      "start": 3.8294
+      "start": 3.684
     },
     {
       "text": "where",
-      "start": 4.2764
+      "start": 4.2707
     },
     {
       "text": "we",
-      "start": 4.5034
+      "start": 4.4735
     },
     {
       "text": "sat",
-      "start": 4.7224
+      "start": 4.6227
     },
     {
       "text": "beside",
-      "start": 4.9998
+      "start": 4.9211
     },
     {
       "text": "the",
-      "start": 5.3523
+      "start": 5.3159
     },
     {
       "text": "water",
-      "start": 5.5859
+      "start": 5.4123
     },
     {
       "text": "and",
-      "start": 5.843
+      "start": 5.7319
     },
     {
       "text": "watched",
-      "start": 6.0732
+      "start": 5.8705
     },
     {
       "text": "the",
-      "start": 6.4311
+      "start": 6.2011
     },
     {
       "text": "orange",
-      "start": 6.6648
+      "start": 6.34
     },
     {
       "text": "sky",
-      "start": 6.9717
+      "start": 6.7345
     },
     {
       "text": "slowly",
-      "start": 7.315
+      "start": 7.0122
     },
     {
       "text": "fade",
-      "start": 7.6575
+      "start": 7.4491
     },
     {
       "text": "behind",
-      "start": 7.9271
+      "start": 7.7477
     },
     {
       "text": "the",
-      "start": 8.284
+      "start": 8.0999
     },
     {
       "text": "distant",
-      "start": 8.5177
+      "start": 8.196
     },
     {
       "text": "mountains",
-      "start": 8.808
+      "start": 8.5904
     }
   ]
 }

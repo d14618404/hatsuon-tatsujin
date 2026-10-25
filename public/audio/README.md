@@ -30,4 +30,4 @@ Before sunset, our family packed some food and drove to the quiet lake, where we
 
 ## 合成音声デモ
 
-`stage-*-synthetic.wav` は米国英語Samanthaの全文合成音声です。生成条件と推定時刻は同名のJSON、ゲーム側の設定は `src/synthetic-demo.js` です。本番データとは分離しています。
+`stage-*-synthetic.wav` は米国英語Samanthaの全文合成音声です。生成条件と音声エンジンの単語境界に同期した時刻は同名のJSON、ゲーム側の設定は `src/synthetic-demo.js` です。本番データとは分離しています。

@@ -5,9 +5,9 @@
   "wordsPerMinute": 170,
   "audioFile": "stage-04-synthetic.wav",
   "duration": 5.87469387755102,
-  "timingStatus": "estimated-not-aligned",
+  "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
   "words": [
     {
       "text": "After",
@@ -15,79 +15,79 @@
     },
     {
       "text": "school,",
-      "start": 0.4306
+      "start": 0.3496
     },
     {
       "text": "my",
-      "start": 1.0332
+      "start": 1.0216
     },
     {
       "text": "friends",
-      "start": 1.2557
+      "start": 1.1924
     },
     {
       "text": "and",
-      "start": 1.5452
+      "start": 1.5338
     },
     {
       "text": "I",
-      "start": 1.7427
+      "start": 1.6724
     },
     {
       "text": "walked",
-      "start": 2.1941
+      "start": 1.8323
     },
     {
       "text": "through",
-      "start": 2.4527
+      "start": 2.1417
     },
     {
       "text": "the",
-      "start": 2.6775
+      "start": 2.3229
     },
     {
       "text": "quiet",
-      "start": 2.878
+      "start": 2.4404
     },
     {
       "text": "park,",
-      "start": 3.1415
+      "start": 2.8775
     },
     {
       "text": "where",
-      "start": 3.593
+      "start": 3.5817
     },
     {
       "text": "we",
-      "start": 3.8126
+      "start": 3.7842
     },
     {
       "text": "found",
-      "start": 4.0244
+      "start": 3.923
     },
     {
       "text": "a",
-      "start": 4.3089
+      "start": 4.2537
     },
     {
       "text": "small",
-      "start": 4.505
+      "start": 4.3175
     },
     {
       "text": "bridge",
-      "start": 4.7974
+      "start": 4.6907
     },
     {
       "text": "beside",
-      "start": 5.0533
+      "start": 5.005
     },
     {
       "text": "the",
-      "start": 5.3943
+      "start": 5.363
     },
     {
       "text": "river",
-      "start": 5.6204
+      "start": 5.48
     }
   ]
 }

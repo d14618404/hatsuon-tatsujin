@@ -1,8 +1,11 @@
-"""macOS offline TTS demos. Word durations estimate timing; NOT forced alignment."""
+"""macOS offline TTS demos aligned to speech-engine word callbacks."""
 from pathlib import Path
 import argparse
 import array
 import json
+import re
+import statistics
+import struct
 import subprocess
 import tempfile
 import wave
@@ -18,6 +21,7 @@ STAGES = {
 }
 VOICE = 'Samantha'
 RATE = 170
+BOUNDARY_PASSES = 3
 
 
 def synth(text, target):
@@ -48,41 +52,58 @@ def bounds(path):
     return spans[0][0], spans[-1][1], duration
 
 
+def capture_boundary_offsets(words):
+    with tempfile.TemporaryDirectory(prefix='rhythm-boundaries-') as folder:
+        session = Path(folder) / 'session'
+        subprocess.run([
+            'script', '-q', '-r', '-t', '0', str(session),
+            'say', '-v', VOICE, '-r', str(RATE), '--interactive=red',
+            ' '.join(words) + '.',
+        ], check=True, stdout=subprocess.DEVNULL)
+        data = session.read_bytes()
+
+    records = []
+    cursor = 0
+    while cursor + 24 <= len(data):
+        length, seconds, micros, kind = struct.unpack_from('<QQI4s', data, cursor)
+        cursor += 24
+        payload = data[cursor:cursor + length]
+        cursor += length
+        if kind.rstrip(b'\0') == b'o':
+            records.append((seconds + micros / 1_000_000, payload))
+
+    clusters = []
+    for timestamp, payload in records:
+        if clusters and timestamp - clusters[-1][1] < .01:
+            clusters[-1][1] = timestamp
+            clusters[-1][2] += payload
+        else:
+            clusters.append([timestamp, timestamp, payload])
+    events = [cluster[0] for cluster in clusters
+              if b'\r' in cluster[2] and re.search(rb'[A-Za-z]', cluster[2])]
+    if len(events) < len(words):
+        raise RuntimeError(f'Expected {len(words)} word boundaries, received {len(events)}.')
+    events = events[:len(words)]
+    return [timestamp - events[0] for timestamp in events]
+
+
+def speech_boundary_offsets(words):
+    """Use median speech-engine callback offsets to reduce synthesis jitter."""
+    passes = [capture_boundary_offsets(words) for _ in range(BOUNDARY_PASSES)]
+    return [statistics.median(offsets) for offsets in zip(*passes)]
+
+
 def generate(stage_id, words):
     out = ROOT / f'public/audio/{stage_id}-synthetic.wav'
     synth(' '.join(words) + '.', out)
-    first, last, duration = bounds(out)
-    phrase_spans, _ = voiced_spans(out)
-    weights = []
-    with tempfile.TemporaryDirectory(prefix='rhythm-tts-') as folder:
-        for i, word in enumerate(words):
-            path = Path(folder) / f'{i}.wav'
-            synth(word, path)
-            a, b, _ = bounds(path)
-            weights.append(max(.06, b - a))
-    group_starts = [0] + [i + 1 for i, word in enumerate(words[:-1])
-                          if word.endswith((',', ';', ':', '!', '?'))]
-    groups = list(zip(group_starts, group_starts[1:] + [len(words)]))
-    starts = []
-    if len(groups) == len(phrase_spans):
-        for (begin, end), (phrase_start, phrase_end) in zip(groups, phrase_spans):
-            scale = (phrase_end - phrase_start) / sum(weights[begin:end])
-            cursor = phrase_start
-            for weight in weights[begin:end]:
-                starts.append(round(cursor, 4))
-                cursor += weight * scale
-        method = 'Isolated-word voiced durations scaled within punctuation-separated voiced spans; not measured word onsets.'
-    else:
-        scale = (last - first) / sum(weights)
-        cursor = first
-        for weight in weights:
-            starts.append(round(cursor, 4))
-            cursor += weight * scale
-        method = 'Isolated-word voiced durations scaled to full-sentence voiced interval; not measured word onsets.'
+    first, _, duration = bounds(out)
+    offsets = speech_boundary_offsets(words)
+    starts = [round(first + offset, 4) for offset in offsets]
+    method = f'Median of {BOUNDARY_PASSES} macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.'
     metadata = {
         'stageId': stage_id, 'voice': VOICE, 'locale': 'en-US', 'wordsPerMinute': RATE,
         'audioFile': f'{stage_id}-synthetic.wav', 'duration': duration,
-        'timingStatus': 'estimated-not-aligned', 'verified': False,
+        'timingStatus': 'engine-word-boundary-aligned', 'verified': False,
         'method': method,
         'words': [{'text': word, 'start': start} for word, start in zip(words, starts)],
     }
@@ -102,12 +123,12 @@ def write_module():
         entries.append(
             f'  "{stage_id}": {{\n'
             f'    audio: new URL("../public/audio/{stage_id}-synthetic.wav", import.meta.url).href,\n'
-            '    verified: false, timingStatus: "estimated-not-aligned",\n'
+            f'    verified: false, timingStatus: {json.dumps(metadata["timingStatus"])},\n'
             f'    starts: {json.dumps(starts)}\n'
             '  }'
         )
     (ROOT / 'src/synthetic-demo.js').write_text(
-        '// Generated by scripts/generate-synthetic-audio.py; estimated onsets, NOT measured.\n'
+        '// Generated by scripts/generate-synthetic-audio.py; aligned to speech-engine word callbacks.\n'
         'export const syntheticDemos = {\n' + ',\n'.join(entries) + '\n};\n')
 
 
@@ -118,5 +139,5 @@ selected = args.stage or list(STAGES)
 results = {stage_id: generate(stage_id, STAGES[stage_id]) for stage_id in selected}
 write_module()
 print(json.dumps({stage_id: {'duration': data['duration'],
-                            'estimatedStarts': [word['start'] for word in data['words']]}
+                            'alignedStarts': [word['start'] for word in data['words']]}
                   for stage_id, data in results.items()}))
