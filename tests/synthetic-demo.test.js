@@ -52,3 +52,9 @@ test('stage 07 is a 76-word HIGH stage with corrected punctuation',()=>{
  assert.match(stage7.sentence,/whose they were\./);
  assert.doesNotMatch(stage7.sentence,/who’s they were/);
 });
+test('stage 07 resets alignment per sentence and does not place cold at audio completion',async()=>{
+ const demo=syntheticDemos['stage-07'];
+ const metadata=JSON.parse(await readFile(new URL('../public/audio/stage-07-synthetic.json',import.meta.url)));
+ assert.match(metadata.method,/passes per sentence/);
+ assert.ok(metadata.duration-demo.starts.at(-1)>.3);
+});

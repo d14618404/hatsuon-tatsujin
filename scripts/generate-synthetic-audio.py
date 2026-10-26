@@ -20,6 +20,9 @@ STAGES = {
     'stage-06': 'Before sunset, our family packed some food and drove to the quiet lake, where we sat beside the water and watched the orange sky slowly fade behind the distant mountains'.split(),
     'stage-07': 'What is this? It’s morning already. Mumbling to myself. On my toast, spreading butter, I take it slow. Though the rain’s finally stopped, guess it left a few drops, and they just won’t dry. Then I saw little footprints, and I wondered whose they were. Turns out last night I left them there. They were my own. Still today, on the ground, water soaking all around. Guess it still won’t dry. And now it’s freezing cold'.split(),
 }
+CHUNK_ENDS = {
+    'stage-07': [3, 6, 9, 18, 34, 45, 53, 57, 66, 71, 76],
+}
 VOICE = 'Samantha'
 RATE = 170
 BOUNDARY_PASSES = 3
@@ -28,6 +31,11 @@ BOUNDARY_PASSES = 3
 def synth(text, target):
     subprocess.run(['say', '-v', VOICE, '-r', str(RATE), '-o', str(target),
                     '--data-format=LEI16@22050', text], check=True)
+
+
+def spoken_text(words):
+    text = ' '.join(words)
+    return text if text.endswith(('.', '?', '!')) else text + '.'
 
 
 def voiced_spans(path, minimum_gap=.12):
@@ -58,20 +66,25 @@ def capture_boundary_offsets(words):
         session = Path(folder) / 'session'
         subprocess.run([
             'script', '-q', '-r', '-t', '0', str(session),
-            'say', '-v', VOICE, '-r', str(RATE), '--interactive=red',
-            ' '.join(words) + '.',
+            '/bin/zsh', '-c', 'stty cols 1000; exec say "$@"', 'say',
+            '-v', VOICE, '-r', str(RATE), '--interactive=red', spoken_text(words),
         ], check=True, stdout=subprocess.DEVNULL)
         data = session.read_bytes()
 
     records = []
+    finished = None
     cursor = 0
     while cursor + 24 <= len(data):
         length, seconds, micros, kind = struct.unpack_from('<QQI4s', data, cursor)
         cursor += 24
         payload = data[cursor:cursor + length]
         cursor += length
-        if kind.rstrip(b'\0') == b'o':
-            records.append((seconds + micros / 1_000_000, payload))
+        timestamp = seconds + micros / 1_000_000
+        record_kind = kind.rstrip(b'\0')
+        if record_kind == b'o':
+            records.append((timestamp, payload))
+        elif record_kind == b'e':
+            finished = timestamp
 
     clusters = []
     for timestamp, payload in records:
@@ -85,22 +98,50 @@ def capture_boundary_offsets(words):
     if len(events) < len(words):
         raise RuntimeError(f'Expected {len(words)} word boundaries, received {len(events)}.')
     events = events[:len(words)]
-    return [timestamp - events[0] for timestamp in events]
+    if finished is None or finished <= events[0]:
+        raise RuntimeError('Speech completion timestamp was not recorded.')
+    return [timestamp - events[0] for timestamp in events], finished - events[0]
 
 
-def speech_boundary_offsets(words):
-    """Use median speech-engine callback offsets to reduce synthesis jitter."""
+def speech_boundary_offsets(words, voiced_duration):
+    """Normalize live callbacks to the rendered WAV, then reduce synthesis jitter."""
     passes = [capture_boundary_offsets(words) for _ in range(BOUNDARY_PASSES)]
-    return [statistics.median(offsets) for offsets in zip(*passes)]
+    normalized = [[offset * voiced_duration / live_duration for offset in offsets]
+                  for offsets, live_duration in passes]
+    return [statistics.median(offsets) for offsets in zip(*normalized)]
 
 
 def generate(stage_id, words):
     out = ROOT / f'public/audio/{stage_id}-synthetic.wav'
-    synth(' '.join(words) + '.', out)
-    first, _, duration = bounds(out)
-    offsets = speech_boundary_offsets(words)
-    starts = [round(first + offset, 4) for offset in offsets]
-    method = f'Median of {BOUNDARY_PASSES} macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.'
+    chunk_ends = CHUNK_ENDS.get(stage_id)
+    if chunk_ends:
+        starts = []
+        chunks = []
+        cursor = 0
+        with tempfile.TemporaryDirectory(prefix='rhythm-chunks-') as folder:
+            for number, end in enumerate(chunk_ends):
+                chunk_words = words[cursor:end]
+                chunk_path = Path(folder) / f'{number}.wav'
+                synth(spoken_text(chunk_words), chunk_path)
+                first, last, chunk_duration = bounds(chunk_path)
+                offsets = speech_boundary_offsets(chunk_words, last - first)
+                with wave.open(str(chunk_path)) as audio:
+                    params = audio.getparams()
+                    chunks.append(audio.readframes(audio.getnframes()))
+                elapsed = sum(len(chunk) for chunk in chunks[:-1]) / params.sampwidth / params.nchannels / params.framerate
+                starts.extend(round(elapsed + first + offset, 4) for offset in offsets)
+                cursor = end
+        with wave.open(str(out), 'wb') as audio:
+            audio.setparams(params)
+            audio.writeframes(b''.join(chunks))
+        duration = sum(len(chunk) for chunk in chunks) / params.sampwidth / params.nchannels / params.framerate
+        method = f'Median of {BOUNDARY_PASSES} macOS speech-engine word-boundary passes per sentence, normalized to each rendered WAV chunk.'
+    else:
+        synth(spoken_text(words), out)
+        first, last, duration = bounds(out)
+        offsets = speech_boundary_offsets(words, last - first)
+        starts = [round(first + offset, 4) for offset in offsets]
+        method = f'Median of {BOUNDARY_PASSES} macOS speech-engine word-boundary passes, normalized to the voiced WAV duration.'
     metadata = {
         'stageId': stage_id, 'voice': VOICE, 'locale': 'en-US', 'wordsPerMinute': RATE,
         'audioFile': f'{stage_id}-synthetic.wav', 'duration': duration,
