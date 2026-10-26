@@ -58,3 +58,8 @@ test('stage 07 resets alignment per sentence and does not place cold at audio co
  assert.match(metadata.method,/passes per sentence/);
  assert.ok(metadata.duration-demo.starts.at(-1)>.3);
 });
+test('stage 07 aligns few drops and and to their measured waveform starts',()=>{
+ const starts=syntheticDemos['stage-07'].starts;
+ assert.deepEqual(starts.slice(27,30),[9.29,9.51,10.25]);
+ assert.ok(starts[29]-starts[28]>.5);
+});

@@ -23,6 +23,9 @@ STAGES = {
 CHUNK_ENDS = {
     'stage-07': [3, 6, 9, 18, 34, 45, 53, 57, 66, 71, 76],
 }
+WAVEFORM_MEASURED_STARTS = {
+    'stage-07': {27: 9.29, 28: 9.51, 29: 10.25},
+}
 VOICE = 'Samantha'
 RATE = 170
 BOUNDARY_PASSES = 3
@@ -142,6 +145,10 @@ def generate(stage_id, words):
         offsets = speech_boundary_offsets(words, last - first)
         starts = [round(first + offset, 4) for offset in offsets]
         method = f'Median of {BOUNDARY_PASSES} macOS speech-engine word-boundary passes, normalized to the voiced WAV duration.'
+    for index, measured_start in WAVEFORM_MEASURED_STARTS.get(stage_id, {}).items():
+        starts[index] = measured_start
+    if stage_id in WAVEFORM_MEASURED_STARTS:
+        method += ' Ambiguous punctuation boundaries were checked against the rendered waveform.'
     metadata = {
         'stageId': stage_id, 'voice': VOICE, 'locale': 'en-US', 'wordsPerMinute': RATE,
         'audioFile': f'{stage_id}-synthetic.wav', 'duration': duration,

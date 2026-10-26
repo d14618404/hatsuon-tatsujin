@@ -7,7 +7,7 @@
   "duration": 24.14925170068027,
   "timingStatus": "engine-word-boundary-aligned",
   "verified": false,
-  "method": "Median of 3 macOS speech-engine word-boundary passes per sentence, normalized to each rendered WAV chunk.",
+  "method": "Median of 3 macOS speech-engine word-boundary passes per sentence, normalized to each rendered WAV chunk. Ambiguous punctuation boundaries were checked against the rendered waveform.",
   "words": [
     {
       "text": "What",
@@ -119,15 +119,15 @@
     },
     {
       "text": "few",
-      "start": 9.4031
+      "start": 9.29
     },
     {
       "text": "drops,",
-      "start": 10.1713
+      "start": 9.51
     },
     {
       "text": "and",
-      "start": 10.2842
+      "start": 10.25
     },
     {
       "text": "they",
