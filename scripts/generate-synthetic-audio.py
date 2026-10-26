@@ -18,6 +18,7 @@ STAGES = {
     'stage-04': 'After school, my friends and I walked through the quiet park, where we found a small bridge beside the river'.split(),
     'stage-05': 'On Saturday morning, our science teacher took us to the city museum, where we carefully studied ancient maps and listened to stories about distant travelers'.split(),
     'stage-06': 'Before sunset, our family packed some food and drove to the quiet lake, where we sat beside the water and watched the orange sky slowly fade behind the distant mountains'.split(),
+    'stage-07': 'What is this? It’s morning already. Mumbling to myself. On my toast, spreading butter, I take it slow. Though the rain’s finally stopped, guess it left a few drops, and they just won’t dry. Then I saw little footprints, and I wondered whose they were. Turns out last night I left them there. They were my own. Still today, on the ground, water soaking all around. Guess it still won’t dry. And now it’s freezing cold'.split(),
 }
 VOICE = 'Samantha'
 RATE = 170

@@ -1,0 +1,317 @@
+{
+  "stageId": "stage-07",
+  "voice": "Samantha",
+  "locale": "en-US",
+  "wordsPerMinute": 170,
+  "audioFile": "stage-07-synthetic.wav",
+  "duration": 25.843854875283448,
+  "timingStatus": "engine-word-boundary-aligned",
+  "verified": false,
+  "method": "Median of 3 macOS speech-engine word-boundary passes, anchored to the first voiced WAV sample.",
+  "words": [
+    {
+      "text": "What",
+      "start": 0.0385
+    },
+    {
+      "text": "is",
+      "start": 0.2
+    },
+    {
+      "text": "this?",
+      "start": 0.3396
+    },
+    {
+      "text": "It\u2019s",
+      "start": 0.897
+    },
+    {
+      "text": "morning",
+      "start": 1.1059
+    },
+    {
+      "text": "already.",
+      "start": 1.4541
+    },
+    {
+      "text": "Mumbling",
+      "start": 2.1972
+    },
+    {
+      "text": "to",
+      "start": 2.6383
+    },
+    {
+      "text": "myself.",
+      "start": 2.7542
+    },
+    {
+      "text": "On",
+      "start": 3.66
+    },
+    {
+      "text": "my",
+      "start": 3.8459
+    },
+    {
+      "text": "toast,",
+      "start": 4.0313
+    },
+    {
+      "text": "spreading",
+      "start": 4.7748
+    },
+    {
+      "text": "butter,",
+      "start": 5.2389
+    },
+    {
+      "text": "I",
+      "start": 6.0284
+    },
+    {
+      "text": "take",
+      "start": 6.1685
+    },
+    {
+      "text": "it",
+      "start": 6.4694
+    },
+    {
+      "text": "slow.",
+      "start": 6.6088
+    },
+    {
+      "text": "Though",
+      "start": 7.3054
+    },
+    {
+      "text": "the",
+      "start": 7.4912
+    },
+    {
+      "text": "rain\u2019s",
+      "start": 7.6306
+    },
+    {
+      "text": "finally",
+      "start": 7.9555
+    },
+    {
+      "text": "stopped,",
+      "start": 8.3966
+    },
+    {
+      "text": "guess",
+      "start": 9.1396
+    },
+    {
+      "text": "it",
+      "start": 9.3949
+    },
+    {
+      "text": "left",
+      "start": 9.5108
+    },
+    {
+      "text": "a",
+      "start": 9.7664
+    },
+    {
+      "text": "few",
+      "start": 10.0919
+    },
+    {
+      "text": "drops,",
+      "start": 10.8807
+    },
+    {
+      "text": "and",
+      "start": 10.9969
+    },
+    {
+      "text": "they",
+      "start": 11.1361
+    },
+    {
+      "text": "just",
+      "start": 11.4617
+    },
+    {
+      "text": "won\u2019t",
+      "start": 11.6705
+    },
+    {
+      "text": "dry.",
+      "start": 12.3688
+    },
+    {
+      "text": "Then",
+      "start": 12.576
+    },
+    {
+      "text": "I",
+      "start": 12.7384
+    },
+    {
+      "text": "saw",
+      "start": 12.9944
+    },
+    {
+      "text": "little",
+      "start": 13.273
+    },
+    {
+      "text": "footprints,",
+      "start": 14.2031
+    },
+    {
+      "text": "and",
+      "start": 14.341
+    },
+    {
+      "text": "I",
+      "start": 14.4802
+    },
+    {
+      "text": "wondered",
+      "start": 14.875
+    },
+    {
+      "text": "whose",
+      "start": 15.1302
+    },
+    {
+      "text": "they",
+      "start": 15.2925
+    },
+    {
+      "text": "were.",
+      "start": 15.827
+    },
+    {
+      "text": "Turns",
+      "start": 16.1751
+    },
+    {
+      "text": "out",
+      "start": 16.361
+    },
+    {
+      "text": "last",
+      "start": 16.6626
+    },
+    {
+      "text": "night",
+      "start": 16.9411
+    },
+    {
+      "text": "I",
+      "start": 17.1036
+    },
+    {
+      "text": "left",
+      "start": 17.3596
+    },
+    {
+      "text": "them",
+      "start": 17.4986
+    },
+    {
+      "text": "there.",
+      "start": 18.0328
+    },
+    {
+      "text": "They",
+      "start": 18.1721
+    },
+    {
+      "text": "were",
+      "start": 18.3117
+    },
+    {
+      "text": "my",
+      "start": 18.5202
+    },
+    {
+      "text": "own.",
+      "start": 19.0543
+    },
+    {
+      "text": "Still",
+      "start": 19.4045
+    },
+    {
+      "text": "today,",
+      "start": 20.1222
+    },
+    {
+      "text": "on",
+      "start": 20.2612
+    },
+    {
+      "text": "the",
+      "start": 20.3542
+    },
+    {
+      "text": "ground,",
+      "start": 21.0741
+    },
+    {
+      "text": "water",
+      "start": 21.3532
+    },
+    {
+      "text": "soaking",
+      "start": 21.7939
+    },
+    {
+      "text": "all",
+      "start": 21.98
+    },
+    {
+      "text": "around.",
+      "start": 22.6763
+    },
+    {
+      "text": "Guess",
+      "start": 22.9551
+    },
+    {
+      "text": "it",
+      "start": 23.0711
+    },
+    {
+      "text": "still",
+      "start": 23.3499
+    },
+    {
+      "text": "won\u2019t",
+      "start": 23.582
+    },
+    {
+      "text": "dry.",
+      "start": 24.2788
+    },
+    {
+      "text": "And",
+      "start": 24.442
+    },
+    {
+      "text": "now",
+      "start": 24.6507
+    },
+    {
+      "text": "it\u2019s",
+      "start": 24.884
+    },
+    {
+      "text": "freezing",
+      "start": 25.3004
+    },
+    {
+      "text": "cold",
+      "start": 25.8131
+    }
+  ]
+}

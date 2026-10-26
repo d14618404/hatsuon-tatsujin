@@ -24,6 +24,10 @@ On Saturday morning, our science teacher took us to the city museum, where we ca
 
 Before sunset, our family packed some food and drove to the quiet lake, where we sat beside the water and watched the orange sky slowly fade behind the distant mountains.
 
+`stage-07.mp3`：
+
+What is this? It’s morning already. Mumbling to myself. On my toast, spreading butter, I take it slow. Though the rain’s finally stopped, guess it left a few drops, and they just won’t dry. Then I saw little footprints, and I wondered whose they were. Turns out last night I left them there. They were my own. Still today, on the ground, water soaking all around. Guess it still won’t dry. And now it’s freezing cold.
+
 `src/stages.js` の各 `start: null` を元音声上の発話開始秒へ置換し、音声・時刻・分類を確認したら `verified: true` にします。0秒は元ファイルの先頭です。プリロール分を足さないでください。
 
 仮デモの音はブラウザ内で生成するガイド音です。英文音声、TTS、録音された発話ではありません。本番音声の代替ではありません。

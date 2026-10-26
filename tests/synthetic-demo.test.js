@@ -44,3 +44,11 @@ test('stage 06 is a 30-word MEDIUM stage',()=>{
  assert.equal(stage6.difficulty,'MEDIUM');
  assert.equal(stage6.words.length,30);
 });
+test('stage 07 is a 76-word HIGH stage with corrected punctuation',()=>{
+ const stage7=stages.find(stage=>stage.id==='stage-07');
+ assert.equal(stage7.title,'ひとりごつ');
+ assert.equal(stage7.difficulty,'HIGH');
+ assert.equal(stage7.words.length,76);
+ assert.match(stage7.sentence,/whose they were\./);
+ assert.doesNotMatch(stage7.sentence,/who’s they were/);
+});
