@@ -1,6 +1,6 @@
 import {syntheticDemos} from './synthetic-demo.js?v=20261026-05';
 import {demoTimelines} from './demo-timelines.js';
-import {stages,lessonReady} from './stages.js?v=20261027-01';
+import {stages,lessonReady} from './stages.js?v=20261027-02';
 import {AudioClock,DrumSound} from './audio-sync.js?v=20261026-01';
 import {RULES,grade,deltaMs,nearest,expired} from './judgement.js';
 import {noteX} from './rhythm-layout.js';
