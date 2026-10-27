@@ -48,8 +48,8 @@ h1{font:800 1.5cqw Arial,sans-serif;letter-spacing:.16em;color:#ffda8a;white-spa
 .note.function{padding:0;border-color:#e2fbff;background:radial-gradient(circle at 25% 20%,#57ccff 0,transparent 30%),linear-gradient(#008cff,#0063da);box-shadow:0 0 .4cqw .12cqw #71e6ff,inset 0 0 .5cqw #83ddff,0 0 1.5cqw #008affb0}
 .note[hidden]{display:none}.lane-guide{display:none}
 /* Optional stage theme: decoration stays outside the unchanged note geometry. */
-#notes[data-note-theme="mascot-ears"] .note{--silhouette:#ff4356;background:var(--silhouette);border-color:transparent;box-shadow:none;overflow:visible}
-#notes[data-note-theme="mascot-ears"] .note.function{--silhouette:#008cff}
+#notes[data-note-theme="mascot-ears"] .note{--silhouette:#ff4356;--rim:#fff5d5;--halo:#fff0ac;--aura:#ff244f80;background:var(--silhouette);border-color:transparent;box-shadow:none;overflow:visible;filter:drop-shadow(0 0 .1cqw var(--rim)) drop-shadow(0 0 .22cqw var(--halo)) drop-shadow(0 0 .65cqw var(--aura))}
+#notes[data-note-theme="mascot-ears"] .note.function{--silhouette:#008cff;--rim:#e2fbff;--halo:#b4efff;--aura:#008aff80}
 #notes[data-note-theme="mascot-ears"] .note::before,
 #notes[data-note-theme="mascot-ears"] .note::after{content:'';position:absolute;top:-6%;width:20%;height:20%;background:var(--silhouette);border-radius:50%;pointer-events:none;z-index:0}
 #notes[data-note-theme="mascot-ears"] .note::before{left:10%}
